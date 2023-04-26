@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="https://t4is.uv.mx/empleados" 
+xmlns:tns="https://t4is.uv.mx/empleados" 
+elementFormDefault="qualified">
+
+  <xs:element name="RegistrarEmpleadoRequest">
+    <xs:complexType>
+      <xs:sequence>
+      	<xs:element name="nombre" type="xs:string"/>
+      	<xs:element name="apellido" type="xs:string"/>
+        <xs:element name="edad" type="xs:int"/>
+      	<xs:element name="oficio" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+        
+  <xs:element name="RegistrarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+      	<xs:element name="respuesta" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="BuscarEmpleadoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="buscadorId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="BuscarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuestaBuscar" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="EditarEmpleadoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="editarId" type="xs:int"/>
+        <xs:element name="editarNombre" type="xs:string"/>
+        <xs:element name="editarApellido" type="xs:string"/>
+        <xs:element name="editarEdad" type="xs:int"/>
+        <xs:element name="editarOficio" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="EditarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuestaEditar" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="EliminarEmpleadoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="eliminarId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="EliminarEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuestaEliminar" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="BuscarTodosRequest"/>
+
+  <xs:element name="BuscarTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="respuestaTodos" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

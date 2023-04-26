@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="https://t4is.uv.mx/productos" 
+xmlns:tns="https://t4is.uv.mx/productos" 
+elementFormDefault="qualified">
+
+  <xs:element name="RegistrarProductoRequest">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="marca" type="xs:string"/>
+            <xs:element name="categoria" type="xs:string"/>
+            <xs:element name="precio" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="RegistrarProductoResponse">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="respuesta" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
